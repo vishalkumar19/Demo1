@@ -1,11 +1,15 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
       java: corretto11
+  pre_build:
+    commands:
+      - echo Pre-build phase
   build:
     commands:
+      - echo Build phase
+      - cd path/to/your/project # Change to the directory containing pom.xml
       - mvn clean install
   post_build:
     commands:
