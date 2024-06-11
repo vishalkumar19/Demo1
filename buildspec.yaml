@@ -3,15 +3,20 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+  pre_build:
+    commands:
+      - echo Pre-build phase
   build:
     commands:
+      - echo Build phase
+      - cd src # Change to the directory containing pom.xml
       - mvn clean install
   post_build:
     commands:
       - echo Build completed
 artifacts:
   files:
-    - target/*.jar
+    - src/target/*.jar
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
