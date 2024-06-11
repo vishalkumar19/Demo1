@@ -9,14 +9,13 @@ phases:
   build:
     commands:
       - echo Build phase
-      - cd src # Change to the directory containing pom.xml
       - mvn clean install
   post_build:
     commands:
       - echo Build completed
 artifacts:
   files:
-    - src/target/*.jar
+    - target/*.jar
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
