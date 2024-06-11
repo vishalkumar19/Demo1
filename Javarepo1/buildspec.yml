@@ -9,7 +9,6 @@ phases:
   build:
     commands:
       - echo Build phase
-      - cd path/to/your/project # Change to the directory containing pom.xml
       - mvn clean install
   post_build:
     commands:
