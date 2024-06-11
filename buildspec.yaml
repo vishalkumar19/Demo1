@@ -5,7 +5,7 @@ phases:
       java: corretto11
   build:
     commands:
-      - mvn clean install -X
+      - mvn clean install
   post_build:
     commands:
       - echo Build completed
