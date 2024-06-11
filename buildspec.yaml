@@ -6,9 +6,15 @@ phases:
   pre_build:
     commands:
       - echo Pre-build phase
+      - ls -al # List files in the current directory
+      - pwd # Print the current working directory
+      - find . -name "pom.xml" # Find the pom.xml file
   build:
     commands:
       - echo Build phase
+      - cd $(find . -name "pom.xml" -exec dirname {} \;) # Change to the directory containing pom.xml
+      - ls -al # List files to confirm we are in the correct directory
+      - pwd # Print the current working directory
       - mvn clean install
   post_build:
     commands:
