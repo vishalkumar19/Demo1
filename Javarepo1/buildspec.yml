@@ -1,10 +1,9 @@
-
 version: 0.2
 
 phases:
   install:
     runtime-versions:
-      java: 17
+      java: corretto11
   build:
     commands:
       - mvn clean install
