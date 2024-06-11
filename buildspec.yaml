@@ -16,6 +16,7 @@ phases:
       - ls -al # List files to confirm we are in the correct directory
       - pwd # Print the current working directory
       - mvn clean install
+      - ls -al target # List files in the target directory to confirm artifacts were generated
   post_build:
     commands:
       - echo Build completed
